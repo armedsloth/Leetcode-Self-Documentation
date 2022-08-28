@@ -1,21 +1,32 @@
 class Solution {
 public:
     string getHint(string secret, string guess) {
-        vector<int> sec(10,0);
-        vector<int> gue(10,0);
-        int acnt=0, bcnt=0, sz=secret.size();
-        for(int i=0; i<sz; i++)
+        int c=0;
+        unordered_map <char,int> m;
+        vector<int> bullidx;
+        for(int i=0; i<secret.size();i++)
+        {
             if(secret[i]==guess[i])
-                acnt++;
+                bullidx.push_back(i);
             else
             {
-                sec[secret[i]-'0']++;
-                gue[guess[i]-'0']++;
-        
+                auto it= m.find(secret[i]);
+                if (it==m.end())
+                    m.insert({secret[i],1}); 
+                else
+                    m[secret[i]]++;
             }
-        for(int i=0; i<10;i++)
-            bcnt+= min (gue[i], sec[i]);
-        return to_string(acnt)+"A"+to_string(bcnt)+"B";
-}
+        }
+        for(int i=0; i<guess.size();i++)
+        {
+            if(!count(bullidx.begin(),bullidx.end(),i))
+            {
+                auto it= m.find(guess[i]);
+                if (it!=m.end() && it->second-->0)
+                    c++;
+            }
+        } 
+        return to_string(bullidx.size())+ "A" + to_string(c) + "B";;
+    }
 };
 
