@@ -6,14 +6,14 @@ public:
         int m= mat.size()-1, n= mat[0].size()-1;    // dimensions
         for(int j=0; j<=n;j++)                      // for top right diagonals
         {
-            for(int i=0; i<=min(m,j);i++)           // storing each diagonal
+            for(int i=0; i<=min(m,n-j);i++)           // storing each diagonal
             {
-                diag.push_back(mat[i][n-j+i]);      // each diagonal element looks like mat[i][m-1-j+i]
+                diag.push_back(mat[i][j+i]);      // each diagonal element looks like mat[i][m-1-j+i]
             }
             sort(diag.begin(),diag.end());
-            for(int i=0; i<=min(m,j);i++)           // replacing sorted pattern in top right diagonals
+            for(int i=0; i<=min(m,n-j);i++)           // replacing sorted pattern in top right diagonals
             {
-                mat[i][n-j+i] = diag[i];
+                mat[i][j+i] = diag[i];
             }
             diag.clear();                           // emptying list before next diagonals 
         }
