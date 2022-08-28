@@ -19,14 +19,14 @@ public:
         }
         for(int j=0;j<=m;j++)                       // bottom left diagonals
         {
-            for(int i=0; i<=min(n,j);i++)           // storing each diagonal
+            for(int i=0; i<=min(n,m-j);i++)           // storing each diagonal
             {
-                diag.push_back(mat[m-j+i][i]);      // diagonal element looks like mat[n-1-j-i][i];
+                diag.push_back(mat[j+i][i]);      // diagonal element looks like mat[n-1-j-i][i];
             }
             sort(diag.begin(),diag.end());          // creating a sorted list for diagonal elements
-            for(int i=0; i<=min(n,j);i++)           // replacing sorted pattern in bottom left diagonals
+            for(int i=0; i<=min(n,m-j);i++)           // replacing sorted pattern in bottom left diagonals
             {
-                mat[m-j+i][i] = diag[i];
+                mat[j+i][i] = diag[i];
             }
             diag.clear();                           // emptying list before next diagonal
         }    
