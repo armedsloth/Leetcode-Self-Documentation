@@ -1,8 +1,8 @@
 class Solution {
 public:
     
-    vector<vector<int>> diagonalSort(vector<vector<int>>& mat) {
-        
+    vector<vector<int>> diagonalSort(vector<vector<int>>& mat) 
+    {    
         vector <int> diag;                              //vector to store individual diagonals
         int m= mat.size()-1, n= mat[0].size()-1;        // dimensions
         
