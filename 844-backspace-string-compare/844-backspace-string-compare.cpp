@@ -9,16 +9,14 @@ public:
             {
                 if(i>0)
                 {
-                    temp="";
-                    if(size-i>1)
-                        temp=s.substr(i+1,size---i-1);
-                    s=s.substr(0,i-1)+temp; 
-                    i--;
+                    s.erase(i-1,2);
                     size--;
+                    i--;
                 }
                 else
-                    s=s.substr(1,size---1);
+                    s.erase(0,1);
                 i--;
+                size--;
             } 
         }
         size=t.size();
@@ -28,19 +26,15 @@ public:
             {
                 if(i>0)
                 {
-                    temp="";
-                    if(size-i>1)
-                    temp=t.substr(i+1,size---i-1);
-                    t=t.substr(0,i-1)+temp; 
-                    i--;
+                    t.erase(i-1,2);
                     size--;
-
+                    i--;
                 }
                 else
-                    t=t.substr(1,size---1);
+                    t.erase(0,1);
                 i--;
+                size--;
             }
-            
         }
         return s==t;
     }
