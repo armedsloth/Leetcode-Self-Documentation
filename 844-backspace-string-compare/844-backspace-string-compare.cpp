@@ -1,7 +1,6 @@
 class Solution {
 public:
     bool backspaceCompare(string s, string t) {
-        string temp;
         int size=s.size();
         for(int i=0;i<size;i++)
         {
