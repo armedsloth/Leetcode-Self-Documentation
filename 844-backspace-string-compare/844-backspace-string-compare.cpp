@@ -12,10 +12,11 @@ public:
                     if(s.size()-i>1)
                     temp=s.substr(i+1,s.size()-i-1);
                     s=s.substr(0,i-1)+temp; 
-                    i-=2;
+                    i--;
                 }
                 else
                     s=s.substr(1,s.size()-1);
+                i--;
             }
             
         }
