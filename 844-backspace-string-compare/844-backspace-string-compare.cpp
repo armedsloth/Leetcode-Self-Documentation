@@ -2,38 +2,42 @@ class Solution {
 public:
     bool backspaceCompare(string s, string t) {
         string temp;
-        for(int i=0;i<s.size();i++)
+        int size=s.size();
+        for(int i=0;i<size;i++)
         {
             if(s[i]=='#')
             {
                 if(i>0)
                 {
                     temp="";
-                    if(s.size()-i>1)
-                    temp=s.substr(i+1,s.size()-i-1);
+                    if(size-i>1)
+                        temp=s.substr(i+1,size---i-1);
                     s=s.substr(0,i-1)+temp; 
                     i--;
+                    size--;
                 }
                 else
-                    s=s.substr(1,s.size()-1);
+                    s=s.substr(1,size---1);
                 i--;
-            }
-            
+            } 
         }
-        for(int i=0;i<t.size();i++)
+        size=t.size();
+        for(int i=0;i<size;i++)
         {
             if(t[i]=='#')
             {
                 if(i>0)
                 {
                     temp="";
-                    if(t.size()-i>1)
-                    temp=t.substr(i+1,t.size()-i-1);
+                    if(size-i>1)
+                    temp=t.substr(i+1,size---i-1);
                     t=t.substr(0,i-1)+temp; 
                     i--;
+                    size--;
+
                 }
                 else
-                    t=t.substr(1,t.size()-1);
+                    t=t.substr(1,size---1);
                 i--;
             }
             
