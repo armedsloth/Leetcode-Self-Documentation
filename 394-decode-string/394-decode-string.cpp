@@ -2,8 +2,8 @@ class Solution {
 public:
     string findmini(string s, int posi)             // function to find the string to be repeated num times
     {
-        int size=s.size(), open=0;
-        for(int i=posi;i<size;i++)                  // loop catching when the brackets balance
+        int open=0;
+        for(int i=posi;i<s.size();i++)                  // loop catching when the brackets balance
         {
             if(s[i]=='[')
                 open++;
