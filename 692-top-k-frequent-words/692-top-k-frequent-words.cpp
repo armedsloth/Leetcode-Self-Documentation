@@ -3,8 +3,7 @@ public:
     
     struct comp
     {
-        template <typename T>
-        bool operator()(const T& l, const T& r) const
+        bool operator()(const pair<string,int> & l, const pair <string, int> & r) const
         {
             if (l.second != r.second)
                 return l.second > r.second;
