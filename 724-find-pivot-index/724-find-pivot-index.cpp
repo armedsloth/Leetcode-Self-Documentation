@@ -6,7 +6,7 @@ public:
         
         for(int i=0 ; i<nums.size(); i++)        // left to right traversing
         {  
-            if(sum - 2*yet == nums[i])   // for pivot, total = left + right + pivot = 2*left + pivot
+            if(sum - yet*2 == nums[i])   // for pivot, total = left + right + pivot = 2*left + pivot
                 return i;
             yet+=nums[i];                 // if not pivot, then update sum found yet.
         }
