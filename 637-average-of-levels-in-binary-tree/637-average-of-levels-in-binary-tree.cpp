@@ -37,9 +37,10 @@ public:
                     vec.push_back(nullptr);
                 else
                     break;
+                vec.erase(vec.begin(),vec.begin()+i);
+                i=0;
             }   
         }
-        
         return res;
     }
 };
